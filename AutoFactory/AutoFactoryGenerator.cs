@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoFactory.Ast;
+using AutoFactory.Model;
 using CodeGeneration.Roslyn;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -25,9 +27,9 @@ namespace AutoFactory
             {
                 CheckValidity(applyTo);
 
-                var semanticModel = await document.GetSemanticModelAsync(cancellationToken);
-
-                return new SyntaxList<MemberDeclarationSyntax>().AddRange(new Ast.Generator().Generate(new Model.Builder().Build((ClassDeclarationSyntax)applyTo, semanticModel)));
+                return new SyntaxList<MemberDeclarationSyntax>()
+                    .AddRange(Generator.Generate(Builder.Build((ClassDeclarationSyntax) applyTo,
+                                                               await document.GetSemanticModelAsync(cancellationToken))));
             }
             catch (Exception ex)
             {
@@ -101,6 +103,5 @@ namespace AutoFactory
         {
             return ConstructorsOf(classSyntax).Where(IsPublic);
         }
-
     }
 }

@@ -7,15 +7,15 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace AutoFactory.Ast
 {
-    public class Generator
+    public static class Generator
     {
-        public IEnumerable<MemberDeclarationSyntax> Generate(Model.Factory factory)
+        public static IEnumerable<MemberDeclarationSyntax> Generate(Model.Factory factory)
         {
             yield return GenerateFactoryInterface(factory);
             yield return GenerateFactoryImplementation(factory);
         }
 
-        private InterfaceDeclarationSyntax GenerateFactoryInterface(Model.Factory factory)
+        private static InterfaceDeclarationSyntax GenerateFactoryInterface(Model.Factory factory)
         {
             var factoryInterface = SyntaxFactory.InterfaceDeclaration(factory.Interface.Name.Identifier)
                                                 .WithModifiers(SyntaxTokenList.Create(SyntaxFactory.Token(SyntaxKind.PublicKeyword)));
@@ -33,7 +33,7 @@ namespace AutoFactory.Ast
             return factoryInterface;
         }
 
-        private ClassDeclarationSyntax GenerateFactoryImplementation(Model.Factory factory)
+        private static ClassDeclarationSyntax GenerateFactoryImplementation(Model.Factory factory)
         {
             var factoryCachedParameters = factory.ConstructedClass
                                                  .PublicConstructors
