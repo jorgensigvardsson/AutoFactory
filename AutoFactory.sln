@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFactory", "AutoFactory\AutoFactory.csproj", "{4E6DA5EA-D16E-4933-A965-F1250DFCFA9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFactory", "src\AutoFactory\AutoFactory.csproj", "{4E6DA5EA-D16E-4933-A965-F1250DFCFA9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFactory.Test", "AutoFactory.Test\AutoFactory.Test.csproj", "{04071FC0-0AA5-4F71-812A-7B3ACEA98315}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFactory.Test", "tests\AutoFactory.Test\AutoFactory.Test.csproj", "{04071FC0-0AA5-4F71-812A-7B3ACEA98315}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

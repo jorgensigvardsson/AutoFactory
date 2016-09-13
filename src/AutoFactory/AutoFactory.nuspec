@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AutoFactory</id>
+    <version>1.0.0</version>
+    <authors>Jörgen Sigvardsson</authors>
+    <owners>Jörgen Sigvardsson</owners>
+    <licenseUrl>https://github.com/jorgensigvardsson/AutoFactory/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/jorgensigvardsson/AutoFactory</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Roslyn code generation tool that enables automatic factory classes.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <dependencies>
+      <dependency id="CodeGeneration.Roslyn" version="[0.1.57,)" />
+      <dependency id="CodeGeneration.Roslyn.BuildTime" version="[0.1.57,)" />
+    </dependencies>
+  </metadata>
+</package>

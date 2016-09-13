@@ -23,11 +23,11 @@ namespace AutoFactory.Ast
             // ReSharper disable once LoopCanBeConvertedToQuery
             foreach (var factoryMethod in factory.Interface.FactoryMethodDeclarations)
             {
-                factoryInterface = factoryInterface.WithMembers(new SyntaxList<MemberDeclarationSyntax>()
-                                                    .Add(SyntaxFactory.MethodDeclaration(factory.ConstructedClass.InterfaceName, "Create")
-                                                                      .WithParameterList(SyntaxFactory.ParameterList().AddParameters(factoryMethod.Constructor.ConstructorParameters.PerInstanceParameters.ToArray()))
-                                                                      .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken))));
+                var createMethodDeclaration = SyntaxFactory.MethodDeclaration(factory.ConstructedClass.InterfaceName, "Create")
+                                                           .WithParameterList(SyntaxFactory.ParameterList().AddParameters(factoryMethod.Constructor.ConstructorParameters.PerInstanceParameters.ToArray()))
+                                                           .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken));
 
+                factoryInterface = factoryInterface.WithMembers(factoryInterface.Members.Add(createMethodDeclaration));
             }
 
             return factoryInterface;
