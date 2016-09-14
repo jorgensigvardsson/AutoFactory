@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>AutoFactory</id>
+    <id>JS.AutoFactory</id>
     <version>1.0.0</version>
     <authors>Jörgen Sigvardsson</authors>
     <owners>Jörgen Sigvardsson</owners>
